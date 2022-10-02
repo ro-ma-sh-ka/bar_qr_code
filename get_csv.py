@@ -1,12 +1,10 @@
+def get_csv(filename='ean13_1.csv'):
+    import csv
 
-import csv
 
-
-with open('ean13_1.csv', newline='', encoding='UTF-8') as csvfile:
-    reader = list(csv.reader(csvfile, delimiter=';'))
-
-    for row in reader:
-        print(row)
-
-if __name__ == "__main__":
-    print('hello')
+    with open(filename, newline='', encoding='UTF-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        items = []
+        for row in reader:
+            items.append(row)
+    return items

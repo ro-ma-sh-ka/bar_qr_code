@@ -1,4 +1,5 @@
-123456789123;Georgia;Memoshvili Str, 12;12 months
-789123456789;Turkey;Gore Str, 123;1 year
-345261783456;Armenia;Ararat, 65;2 weeks
-456372987645;Kazachstan;Nur, 11;12.12.25
+article,barcode,country,Adress,Warranty
+art123,123456789123,Georgia,Memoshvili Str,12 months
+art456,789123456789,Turkey,Gore Str,1 year
+art789,345261783456,Armenia,Ararat,2 weeks
+art652,456372987645,Kazachstan,Nur,12.12.25
