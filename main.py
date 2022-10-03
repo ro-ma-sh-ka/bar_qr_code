@@ -1,4 +1,8 @@
-import bar_code
+from create_window import MainWindow
+from PyQt6.QtWidgets import QApplication
 
 
-bar_code.print_barcode()
+app = QApplication([])
+window = MainWindow()
+window.show()
+exit(app.exec())
