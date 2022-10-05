@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
         self.button_folder = QPushButton('Where to save')
         self.button_folder.clicked.connect(lambda: self.open_folder_dialog())
 
-        self.label_filename = QLineEdit()
+        self.label_filename = QLineEdit('ean13_1.csv')
         self.label_foldername = QLineEdit()
 
         self.button_create = QPushButton('Create labels')
