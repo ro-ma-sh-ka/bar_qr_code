@@ -1,5 +1,4 @@
-import bar_code
-import get_csv
+import process
 from pathlib import Path
 from PyQt6.QtWidgets import (
     QMainWindow,
@@ -110,8 +109,8 @@ class MainWindow(QMainWindow):
         self.label_foldername.setText(folder_to_save)
 
     def create_labels(self):
-        bar_code.print_barcode(
-                get_csv.get_csv(self.label_filename.text()),
+        process.print_barcode(
+                process.get_csv(self.label_filename.text()),
                 self.combobox_code.currentText(),
                 self.label_foldername.text()
                 )
