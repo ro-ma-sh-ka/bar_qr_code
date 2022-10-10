@@ -1,4 +1,5 @@
 import process
+from typing import NoReturn
 from pathlib import Path
 from PyQt6.QtWidgets import (
     QMainWindow,
@@ -12,14 +13,28 @@ from PyQt6.QtWidgets import (
     QComboBox
 )
 
+
 class MainWindow(QMainWindow):
+    """
+    Class to create a window dialog.
+    ...
+    Methods
+    _______
+    set_window(self):
+        creates window's structure
+    open_csvfile_dialog(self):
+        opens dialog to choose CSV file with items
+    open_folder_dialog(self):
+        opens dialog to choose or create folder destination to save barcode images
+    create_labels(self):
+        runs barcode creating function after press button
+    """
     def __init__(self):
         super().__init__()
-
         self.set_window()
 
-    def set_window(self):
-
+    def set_window(self) -> NoReturn:
+        """Creates window's structure"""
         self.setWindowTitle("BARCODE CREATOR")
         self.setGeometry(100, 100, 200, 100)
         self.setFixedSize(300, 200)
@@ -65,7 +80,7 @@ class MainWindow(QMainWindow):
         self.spinbox_high.setValue(20)
 
         self.button_file = QPushButton('Choose CSV file')
-        self.button_file.clicked.connect(lambda: self.open_dialog())
+        self.button_file.clicked.connect(lambda: self.open_csvfile_dialog())
 
         self.button_folder = QPushButton('Where to save')
         self.button_folder.clicked.connect(lambda: self.open_folder_dialog())
@@ -93,7 +108,8 @@ class MainWindow(QMainWindow):
         container.setLayout(layout)
         self.setCentralWidget(container)
 
-    def open_dialog(self):
+    def open_csvfile_dialog(self) -> NoReturn:
+        """Opens dialog to choose CSV file with items"""
         home_dir = str(Path.home())
         filename = QFileDialog.getOpenFileName(
             self,
@@ -103,12 +119,13 @@ class MainWindow(QMainWindow):
         )
         self.label_filename.setText(str(filename[0]))
 
-
     def open_folder_dialog(self):
+        """opens dialog to choose or create folder destination to save barcode images"""
         folder_to_save = QFileDialog.getExistingDirectory(self, 'Choose folder to save images')
         self.label_foldername.setText(folder_to_save)
 
-    def create_labels(self):
+    def create_labels(self) -> NoReturn:
+        """runs barcode creating function after press button"""
         process.print_barcode(
                 process.get_csv(self.label_filename.text()),
                 self.combobox_code.currentText(),
