@@ -37,7 +37,8 @@ class MainWindow(QMainWindow):
         """Creates window's structure"""
         self.setWindowTitle("BARCODE CREATOR")
         self.setGeometry(100, 100, 200, 100)
-        self.setFixedSize(300, 200)
+        self.setMinimumSize(300, 200)
+        self.setMaximumSize(900, 600)
 
         self.label_code = QLabel()
         self.label_code.setText('Barcode type')
@@ -73,11 +74,11 @@ class MainWindow(QMainWindow):
                                     "nw-7"
                                     ])
 
-        self.spinbox_width = QSpinBox()
-        self.spinbox_width.setValue(80)
+        # self.spinbox_width = QSpinBox()
+        # self.spinbox_width.setValue(80)
 
-        self.spinbox_high = QSpinBox()
-        self.spinbox_high.setValue(20)
+        # self.spinbox_high = QSpinBox()
+        # self.spinbox_high.setValue(20)
 
         self.button_file = QPushButton('Choose CSV file')
         self.button_file.clicked.connect(lambda: self.open_csvfile_dialog())
@@ -96,9 +97,9 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.label_code, 0, 0)
         layout.addWidget(self.combobox_code, 0, 1)
         layout.addWidget(self.label_width, 1, 0)
-        layout.addWidget(self.spinbox_width, 1, 1)
+        # layout.addWidget(self.spinbox_width, 1, 1)
         layout.addWidget(self.label_high, 2, 0)
-        layout.addWidget(self.spinbox_high, 2, 1)
+        # layout.addWidget(self.spinbox_high, 2, 1)
         layout.addWidget(self.button_file, 3, 0)
         layout.addWidget(self.label_filename, 3, 1, 1, 1)
         layout.addWidget(self.button_folder, 4, 0)
