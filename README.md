@@ -18,8 +18,9 @@ main.py
 
 ## General API Documentation
 * Choose barcode type
-* Set size of stickers in mm
-* Choose CSV file with items
+* Set size of stickers in mm - will be in ver.2
+* Choose CSV file with items. Columns:
+article, barcode, information
 * Choose folder where to save images
 
 ## Questions and suggestions

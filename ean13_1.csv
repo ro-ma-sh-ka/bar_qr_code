@@ -1,5 +1,5 @@
-article,barcode,country,adress,warranty
-art123,123456789123,Georgia,Memoshvili Str,12 months
-art456,789123456789,Turkey,Gore Str,1 year
-art789,345261783456,Armenia,Ararat,2 weeks
-art652,456372987645,Kazachstan,Nur,12.12.25
+article,barcode,information
+art123,123456789123,"Georgia, Memoshvili Str, warranty 12 m"
+art456,789123456789,"Turkey, Gore Str, warranty 1 year"
+art789,345261783456,"Armenia, Ararat. 17, warranty: no limits"
+art652,456372987645,"Kazachstan, Nur, date 12.12.21"

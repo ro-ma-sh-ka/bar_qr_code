@@ -17,5 +17,5 @@ def print_barcode(items, barcode_type='ean13', folder_to_save=None) -> NoReturn:
     """recieves list of items from get_csv function, type of barcode and destination folder to save images"""
     for item in items:
         file_to_save = str(folder_to_save) + '/' + item['article']
-        text = f"Art: {item['article']}\\n adress: {item['country']}, {item['adress']}, warranty: {item['warranty']}"
+        text = f"Art: {item['article']}, Info: {item['information']}"
         barcode.generate(barcode_type, item['barcode'], None, file_to_save, None, text)
