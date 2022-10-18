@@ -6,7 +6,7 @@
 
   * [Getting started](#getting-started)
   * [General API Documentation](#general-api-documentation)
-  * [Questions](#questions)
+  * [Questions and suggestions](#questions-and-suggestions)
 
 ## Getting started
 
